@@ -9,3 +9,5 @@ listB = [2, 3, 6]
 answer = [A*B for A,B in zip(listA,listB)]
 
 print(listA, 'x', listB, '=', answer)
+
+# print(list(zip(listA,listB)))
