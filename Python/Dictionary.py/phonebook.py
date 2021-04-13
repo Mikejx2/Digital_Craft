@@ -18,6 +18,9 @@ userInput = ""
 
 
 #function
+def dumpPickle():
+    with open('phonebook.pickle', 'wb') as fh:
+        pickle.dump(phonebook, fh)
 def find():
     findName = input("Name: ")
     findPerson = phonebook[findName]
@@ -28,15 +31,13 @@ def add():
     newName = input("Name: ")
     newNumber = input("Phone Number: ")
     phonebook[newName] = newNumber
-    with open('phonebook.pickle', 'wb') as fh:
-        pickle.dump(phonebook, fh)
+    dumpPickle()
     print(f"Entry stored for {newName}")
 
 def delete():
     delName = input("Name: ")
     del phonebook[delName]
-    with open('phonebook.pickle', 'wb') as fh:
-        pickle.dump(phonebook, fh)
+    dumpPickle()
     print(f"Deleted entry for {delName}")
 
 def displayAll():
