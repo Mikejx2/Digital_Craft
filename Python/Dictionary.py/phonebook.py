@@ -21,6 +21,7 @@ userInput = ""
 def dumpPickle():
     with open('phonebook.pickle', 'wb') as fh:
         pickle.dump(phonebook, fh)
+
 def find():
     findName = input("Name: ")
     findPerson = phonebook[findName]
