@@ -18,23 +18,29 @@ class Characters:
 
     def attack(self, enemy):
         
+        
+
         if enemy.name == "zombie": 
             enemy.health += self.power
-            
-
+        
         if enemy.name == "shadow" and random.randint(0,10) < 1:
             enemy.health -= (self.power)
-            
+        
         elif enemy.name == "shadow":
             print("no damage")    
         
+        elif enemy.name == "hero" and random.randint(0,100) < 20:
+            self.health -= (enemy.power * 2)
+            print("{} does double damage to {}.".format(enemy.name, self.name))
+
         elif enemy.name == "medic" and random.randint(0,100) < 20:
-            enemy.health -= (self.power * 2)
-            print("{} does double damage({}) to {}.".format(self.name, (self.power * 2), enemy.name))
+            enemy.health += 2
+            print("{} recuperated 2 health points.".format(enemy.name))
         
         else:
             enemy.health -= self.power
             print("{} does {} damage to {}.".format(self.name, self.power, enemy.name))
+        
         if enemy.health <= 0:
             print("{} killed the {}".format(self.name, enemy.name))
         
@@ -50,14 +56,10 @@ class Shadow(Characters):
     pass
 
 class Medic(Characters):
-    
-    def recuperateHealth(self):
-        if enemy.name == "medic" and random.randint(0,100) < 20:
-            enemy.health -= (self.power * 2)
-            print("{} does double damage({}) to {}.".format(self.name, (self.power * 2), enemy.name))
+    pass
 
 class Zombie(Characters):
-        
+    
     def print_status(self):
         print("Zombie can not die!")   
 
@@ -74,6 +76,12 @@ class Hero(Characters):
 class Goblin(Characters):
     pass
 
+class Archer(Characters):
+    pass
+
+class Knight(Characters):
+    pass
+
 class Store:
     def __init__(self, name, use):
         self.name = name
@@ -85,7 +93,7 @@ class Store:
         print("2. Armor")
         print("3. Evade")
         print("4. Sword")
-        print("5. ssdad")
+        print("5. Spear")
         print()
         print("> ", end=' ')
         raw_input = input()
@@ -101,69 +109,83 @@ class Store:
         elif raw_input == "4":
             Sword.addSword(self)
             
-        
         elif raw_input == "5":
-            pass
+            Spear.addSpear(self)
             
-        
         else:
             print("Invalid input {}".format(raw_input))
 
 class SuperTonic(Store):
     
     def addSuperTonic(self):
-        if self.health >= 0:
+        if self.bounty <= 0:
+            print("Not enough coins!")
+            
+        else:    
             self.health += 10
             print("Your health has been restored by 10!")
 
 class Evade(Store):
 
     def addEvade (self):
-        evade = self.evade
-        self.evade += 2
-        print("You have {} Evade power, {} Armor!".format(self.evade, self.armor))
+        if self.bounty <= 0:
+            print("Not enough coins!")
+
+        else:
+            evade = self.evade
+            self.evade += 2
+            print("You have {} Evade power, {} Armor!".format(self.evade, self.armor))
 
 class Armor(Store):
 
     def addArmor (self):
-        armor = self.armor
-        self.armor += 2
-        print("You have {} Evade power, {} Armor!".format(self.evade, self.armor))
+        if self.bounty <= 0:
+            print("Not enough coins!")
+        
+        else:
+            self.armor += 2
+            self.health += 2
+            print("You have {} Evade power, {} Armor!".format(self.evade, self.armor))
+            self.armor -= 2
 
 class Sword(Store):
 
     def addSword (self):
-        sword = self.power
-        self.power ++ 2
-        print("You are now equiped with a Sword!"))
+        if self.bounty <= 0:
+            print("Not enough coins!")
+        else:
+            hero.power += 2
+            print("You are now equiped with a Sword!")
 
-# class Armor(Store):
+class Spear(Store):
 
-#     def addArmor (self):
-#         armor = self.armor
-#         self.armor += 2
-#         print("You have {} Armor!".format(self.armor))
-
+    def addSpear (self):
+        if self.bounty <= 0:
+            print("Not enough coins!")
+        
+        else:
+            hero.power += 4
+            print("You are now equiped with a Spear!")
 
 def main():
     hero = Hero("hero",20, 5, 0, 0, 0)
-    goblin = Goblin("goblin",12, 2, 4, 0, 0)
-    zombie = Zombie("zombie", 1, 1, 3, 0, 0)
-    shadow = Shadow("shadow", 6, 1, 4, 0, 0)
-    medic = Medic("medic", 7, 2, 8, 0, 0)
+    goblin = Goblin("goblin",12, 3, 4, 0, 0)
+    zombie = Zombie("zombie", 1, 2, 3, 0, 0)
+    shadow = Shadow("shadow", 6, 6, 4, 0, 0)
+    medic = Medic("medic", 8, 3, 8, 0, 0)
+    archer = Archer("archer", 10, 6, 10, 0, 0)
+    knight = Knight("knight", 20, 8, 14, 0, 0)
     superTonic = SuperTonic("Super Tonic", 10 )
     armor = Armor("Armor", 2)
-    # sword = store("Sword", 5)
-    # asdsad = store("asdsad", 10)
+    
 
-
-    enemys = [ goblin, zombie, shadow, medic]
+    enemys = [ goblin, zombie, shadow, medic, archer, knight]
     random.shuffle(enemys)
 
     for enemy in enemys:
 
 
-        while hero.alive() and enemy.alive():
+        while hero.alive():
             hero.print_status()
             enemy.print_status()
             hero.coins()
@@ -191,7 +213,6 @@ def main():
 
             else:
                 print("Invalid input {}".format(raw_input))
-
 
 main()
 
