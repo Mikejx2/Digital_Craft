@@ -1,0 +1,55 @@
+/* 1. Layout practice */
+
+/* header{
+    background-color: black;
+    color: gold;
+    font-size: 20px;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar{
+
+    background-color: gold;
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    height: 100%;
+    text-align: center;
+    width: 30%;
+
+}
+
+.main{
+    background-color:grey;
+    color: white;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    width: 70%;
+    
+    
+    
+}
+
+
+footer{
+    background-color: black;
+    color: gold;
+    font-size: 20px;
+    padding: 30px;
+    text-align: center;
+    position: absolute ;
+    bottom: 0px;
+    width: 100%;
+} */
+
+
+
+/* 2. Positioning */
+
+.side  {
+    position: absolute;
+}

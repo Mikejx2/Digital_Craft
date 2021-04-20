@@ -12,11 +12,6 @@ with open('phonebook.pickle', 'rb') as fh:
 userInput = ""
 
 
-
-
-
-
-
 #function
 def dumpPickle():
     with open('phonebook.pickle', 'wb') as fh:

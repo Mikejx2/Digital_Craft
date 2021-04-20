@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+}
+.header{
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    background-color: yellow;
+}
+.imgContainer{
+    position: relative;
+    z-index: 1;
+}
+
+.cityImage{
+    position: absolute;
+    top: -200px ;
+}
+
+.textcontainer{
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    line-height: 300px;
+    font-size: 70px;
+    color: white;
+    
+}
+
+.opacity{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 70%;
+    z-index: 5;
+}

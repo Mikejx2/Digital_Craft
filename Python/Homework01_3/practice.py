@@ -112,8 +112,92 @@
 
 # print(sign)
 
-for i in range(1,11):
-    for x in range(1,11):
-        print(i,"x",x,"=",i*x)
-    print()
+# for i in range(1,11):
+#     for x in range(1,11):
+#         print(i,"x",x,"=",i*x)
+#     print()
+
+# word = input('The word: ').upper()
+
+# result = ''
+
+# # A => 4
+# # E => 3
+# # G => 6
+# # I => 1
+# # O => 0
+# # S => 5
+# # T => 7
+
+# for char in word:
+#     result_char = char
+#     if result_char == 'A':
+#         result_char = '4'
+#     if result_char == 'E':
+#         result_char = '3'
+#     if result_char == 'G':
+#         result_char = '6'
+#     if result_char == 'I':
+#         result_char = '1'
+#     if result_char == 'O':
+#         result_char = '0'
+#     if result_char == 'S':
+# #         result_char = '5'
+# #     if result_char == 'T':
+# #         result_char = '7'
+# #     result = result + result_char
+
+
+# print(result)
+
+# 70 >=  Wear Shorts
+# 70 <  Wear long pants
+
+
+
+# first = input("What is your First Name?  ")
+# last = input("What is your Last Name?  ")
+# temp = input ("What is the Weather today? ")
+# result = ""
+
+# def getName(fName,lName):
+#     return fName + " " + lName
+
+# for i in temp:
+#     todayTemp = i
+    
+#     if todayTemp >= "70":
+#         todayTemp = "wear shorts today!"
+#     if todayTemp < "70":
+#         todayTemp = "wear long pants today!"
+#     result = todayTemp
+    
+# name = getName(first,last)
+
+# # print(f"Hello  {name} {result}")
+# import random
+
+# words = ["nest", "baseball", "soccor"]
+
+# secret_word = random.choice(words)
+# # lives = 9
+
+# # while lives > 0:
+# #     if guess 
+
+
+# print(secret_word)
+
+Number = input("Number : ")
+nums = {
+    "0" : "Zero",
+    "1" : "One",
+    "2" : "Two",
+    "3" : "Three"
+}
+output = ""
+for i in Number:
+    output += Number[""]
+    
+print(output)
 
