@@ -1,0 +1,74 @@
+body{
+    padding-top: 10px;
+    
+}
+.container{
+    width: 80vw;
+    height: 90vh;
+
+    display: flex;
+    background-color: gray;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.flexContainerRow{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: stretch;
+}
+
+.flexContainerColumn{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: stretch;
+}
+
+
+.red{
+    background-color: red;
+}
+
+.white{
+    background-color: white;
+}
+
+.black{
+    background-color: black;
+}
+
+.green{
+    background-color: green;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.flex1{
+    flex: 1;
+}
+.flex2{
+    flex: 2;
+}
+.flex3{
+    flex: 3;
+}
+.flex4{
+    flex: 4;
+}
+.flex5{
+    flex: 5;
+}
+
+.border{
+    border: 1px solid black;
+}
